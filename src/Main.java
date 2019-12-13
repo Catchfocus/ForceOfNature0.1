@@ -13,14 +13,14 @@ public class Main {
 
         do {
             if(hero.skillPoint>0) {
-                Scanner beker = new Scanner(System.in);
+                Scanner scan = new Scanner(System.in);
                 int choice = 0;
                 System.out.println("\n\nJelenleg " + hero.skillPoint + " elosztható képesség pontod van\n");
                 System.out.println("\nMelyik tulajdonságod szeretnéd növelni?\n"
                         + "\n    1 - Életerő       2 - Inteligencia      3 - Karizma"
                         + "\n    4 - Ügyesség      5 - Erős\n");
 
-                choice=beker.nextInt();
+                choice=scan.nextInt();
 
                 switch(choice) {
                     case 1: hero.upgradeVitality(1); break;
@@ -36,6 +36,7 @@ public class Main {
         System.out.println("\n\nTanult képességek:\n\n");
 
     }
+
 
     // === === === === === === ===
 
@@ -100,8 +101,8 @@ public class Main {
                 + "\n\n");
 
 
-        Scanner be = new Scanner(System.in);
-        hero.raceIndicator=be.nextInt();
+        Scanner scan = new Scanner(System.in);
+        hero.raceIndicator=scan.nextInt();
         switch(hero.raceIndicator) {
             case 1: hero.upgradeAllSkill(6, 8, 10, 6, 5, 0.8); System.out.println("Az emberi fajt választottad\n");;break;
             case 2: hero.upgradeAllSkill(5, 11, 6, 8, 3, 1.0); System.out.println("Az elf fajt választottad\n");;break;
@@ -138,14 +139,14 @@ public class Main {
 
     public static void inGameMenu(Character hero, Map map, boolean created) {
         int choice = 0;
-        Scanner be = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         do {
             System.out.println("\n = = = = = = = = = = Ingame Menu = = = = = = = = = = \n"
                     + "\n  1 - Karakter státusz   2 - Eszköztár    3 - Képességek"
                     + "\n  4 - Térkep             5 - Főmenü  \n"
                     + "\n = = = = = = = = = = = = = = = = = =  = = = = = = = = \n ");
-            choice=be.nextInt();
+            choice=scan.nextInt();
             switch(choice){
                 case 1: System.out.println("Karakter statuszainak megnyitasa...\n"); hero.writeStats(); inGameMenu(hero,map,created);;break;
                 case 2: System.out.println("Eszkoztar megnyitasa...\n");inGameMenu(hero,map,created); ;break;
@@ -168,7 +169,7 @@ public class Main {
 
     public static void mainMenu(Character hero,Map map,boolean created) {
         int choice = 0;
-        Scanner be = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         System.out.println("Valassz az alabbi menüpontok közül!\n\n");
         if(created==true) {
@@ -178,7 +179,7 @@ public class Main {
         }
         System.out.println("2 - Kilépés\n");
 
-        choice=be.nextInt();
+        choice=scan.nextInt();
         do {
 
             if(choice==1) {  //1 - folytatás
